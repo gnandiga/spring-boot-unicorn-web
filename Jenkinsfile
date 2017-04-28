@@ -1,5 +1,4 @@
-pipeline {
-    agent any
+node {
 
     stage('Build') {
         docker.image('maven:3.5.0-jdk-8').inside {
