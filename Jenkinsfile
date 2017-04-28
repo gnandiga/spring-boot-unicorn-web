@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                docker.image('maven:3.5.0-jdk-8').inside {
+                    sh "mvn clean test"
+                }
             }
         }
         stage('Test') {
